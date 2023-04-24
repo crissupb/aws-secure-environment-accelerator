@@ -200,7 +200,7 @@ export namespace InitialSetup {
           new iam.ServicePrincipal('codebuild.amazonaws.com'),
           new iam.ServicePrincipal('lambda.amazonaws.com'),
           new iam.ServicePrincipal('events.amazonaws.com'),
-          new iam.ArnPrincipal(roleArn),
+          //new iam.ArnPrincipal(roleArn),
         ),
         managedPolicies: [iam.ManagedPolicy.fromAwsManagedPolicyName('AdministratorAccess')],
         maxSessionDuration: buildTimeout,
