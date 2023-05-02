@@ -46,7 +46,7 @@ async function onCreate(event: CloudFormationCustomResourceEvent) {
   const instanceParams = {
     ImageId: properties.imageId,
     SubnetId: properties.subnetId,
-    InstanceType: properties.instanceType || 't2.micro',
+    InstanceType: properties.instanceType || 't3.micro',
     MinCount: 1,
     MaxCount: 1,
   };
