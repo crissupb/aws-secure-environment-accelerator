@@ -206,13 +206,13 @@ export namespace InitialSetup {
         maxSessionDuration: buildTimeout,
       });
 
-      pipelineRole.assumeRolePolicy?.addStatements(
-        new iam.PolicyStatement({
-          actions: ['sts:AssumeRole'],
-          effect: iam.Effect.ALLOW,
-          principals: [new iam.ArnPrincipal(roleArn)],
-        }),
-      );
+      // pipelineRole.assumeRolePolicy?.addStatements(
+      //   new iam.PolicyStatement({
+      //     actions: ['sts:AssumeRole'],
+      //     effect: iam.Effect.ALLOW,
+      //     principals: [new iam.ArnPrincipal(roleArn)],
+      //   }),
+      // );
 
       // S3 working bucket
       const s3WorkingBucket = new s3.Bucket(this, 'WorkingBucket', {
