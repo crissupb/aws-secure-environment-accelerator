@@ -284,7 +284,7 @@ async function onDelete(event: CloudFormationCustomResourceDeleteEvent) {
   if (
     event.PhysicalResourceId !== `AssociateHostedZones-${vpcName}-${vpcRegion}-${vpcAccountId}-${hostedZoneAccountId}`
   ) {
-    return;
+    return event.PhysicalResourceId;
   }
   const vpcAccountCredentials = await sts.getCredentialsForAccountAndRole(vpcAccountId, assumeRoleName);
   const vpcRoute53 = new AWS.Route53({
@@ -342,4 +342,5 @@ async function onDelete(event: CloudFormationCustomResourceDeleteEvent) {
       }
     }
   }
+  return event.PhysicalResourceId;
 }
